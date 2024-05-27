@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редагування</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="body">
+   
+    <h1 class="text-center">Редагувати пам'ятки</h1>
+    <form action="" method="POST" class="text-center">
+        <div class="nb-3">
+            <label class="form-label">
+                ID Пам'ятки
+                <input type="number" placeholder="id" class="form-controll" id="id_landmark" name="id_landmark" min="1" value=<%=LandMark[0].id_landmark %>>
+            </label>
+
+            <label class="form-label">
+                Назва
+                <input type="text" placeholder="Назва" class="form-controll" id="landmark_name" name="landmark_name" value=<%=LandMark[0].landmark_name %>>
+            </label>
+
+            <label class="form-label">
+                ID тура
+                <input type="number" placeholder="id_tour" class="form-controll" id="id_tour" name="id_tour" min="1" value=<%=LandMark[0].id_tour %>>
+            </label>
+
+            <label class="form-label">
+                Опис
+                <input type="text" placeholder="Опис" class="form-controll" id="landmark_description" name="landmark_description" value=<%=LandMark[0].landmark_description %>>
+            </label>
+
+            <label class="form-label">
+                Адреса
+                <input type="text" placeholder="Адреса" class="form-controll" id="landmark_address" name="landmark_address" value=<%=LandMark[0].landmark_address %>>
+            </label>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary" formaction="/api/landmark/put/<%= LandMark[0].id_landmark%>">Редагувати</button>
+    </form>
+
+
+
+
+    <!-- Підключення Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

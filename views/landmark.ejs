@@ -1,0 +1,85 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пам'ятки</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="body">
+    <h1 class="text-center">Список пам'яток</h1>
+    <div class="table-responsive">
+        <table class="table table-primary table-hover table-sm">
+            <tr>
+                <th>ID</th>
+                <th>Назва</th>
+                <th>ID тура</th>
+                <th>Опис</th>
+                <th>Адреса</th>
+            </tr>
+
+            <!-- Використання EJS для виводу даних про клієнтів -->
+            <% for (var i = 0; i < landmark.length; i++) { %>
+                <tr>
+                    <td><%= landmark[i].id_landmark %></td>
+                    <td><%= landmark[i].landmark_name %></td>
+                    <td><%= landmark[i].id_tour %></td>
+                    <td><%= landmark[i].landmark_description %></td>
+                    <td><%= landmark[i].landmark_address %></td>
+
+                    <td style="background-color: azure;">
+                        <a class="btn btn-danger" href="/api/landmark/delete/<%= landmark[i].id_landmark %>">Видалити</a>
+                    </td>
+
+                    <td style="background-color: azure;">
+                        <a class="btn btn-info" href="/api/landmark/<%= landmark[i].id_landmark %>">Редагувати</a>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
+
+    <h2 class="text-center">Додати клієнта</h2>
+
+    <form action="landmark" method="POST" class="text-center">
+        <div class="nb-3">
+            <label class="form-label">
+                ID Пам'ятки
+                <input type="number" placeholder="id" class="form-controll" id="id_landmark" name="id_landmark" min="1">
+            </label>
+
+            <label class="form-label">
+                Назва
+                <input type="text" placeholder="Назва" class="form-controll" id="landmark_name" name="landmark_name">
+            </label>
+            
+            <label class="form-label">
+                ID тура
+                <input type="number" placeholder="id_tour" class="form-controll" id="id_tour" name="id_tour" min="1">
+            </label>
+
+            <label class="form-label">
+                Опис
+                <input type="text" placeholder="Опис" class="form-controll" id="landmark_description" name="landmark_description" >
+            </label>
+
+            <label class="form-label">
+                Адреса
+                <input type="text" placeholder="Адреса" class="form-controll" id="landmark_address" name="landmark_address" >
+            </label>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Додати</button>
+
+    </form>
+    
+    <a class="btn btn-outline-secondary" href="/" style="margin-left: 50px;">На головну</a>
+    <!-- Підключення Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

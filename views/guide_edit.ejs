@@ -1,0 +1,54 @@
+<!-- views/clients.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редагування</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="body">
+   
+    <h1 class="text-center">Редагувати гіда</h1>
+    <form action="" method="POST" class="text-center">
+        <div class="nb-3">
+            <label class="form-label">
+                ID гіда
+                <input type="number" placeholder="id" class="form-controll" id="id_guide" name="id_guide" min="1" value="<%=Guide[0].id_guide %>">
+            </label>
+
+            <label class="form-label">
+                Ім'я гіда
+                <input type="text" placeholder="Ім'я гіда" class="form-controll" id="guid_name" name="guid_name" value="<%=Guide[0].guid_name %>">
+            </label>
+
+            <label class="form-label">
+                Освіта
+                <input type="text" placeholder="Освіта гіда" class="form-controll" id="guid_education" name="guid_education" value="<%=Guide[0].guid_education %>">
+            </label>
+
+            <label class="form-label">
+                Досвід роботи
+                <input type="number" placeholder="Досвід" class="form-controll" id="guid_experience" name="guid_experience"  value="<%=Guide[0].guid_experience %>">
+            </label>
+
+            <label class="form-label">
+                Номер телефону
+                <input type="number" placeholder="Телефон гіда" class="form-controll" id="guide_phone" name="guide_phone" value="<%=Guide[0].guide_phone %>">
+            </label>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary" formaction="/api/guide/put/<%= Guide[0].id_guide%>">Редагувати</button>
+    </form>
+
+
+
+
+    <!-- Підключення Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

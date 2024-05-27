@@ -1,0 +1,49 @@
+<!-- views/clients.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редагування</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="body">
+   
+    <h1 class="text-center">Редагувати клієнта</h1>
+    <form action="" method="POST" class="text-center">
+        <div class="nb-3">
+            <label class="form-label">
+                ID клієнта
+                <input type="number" placeholder="id" class="form-controll" id="id_client" name="id_client" min="1" value=<%=Client[0].id_client %>>
+            </label>
+
+            <label class="form-label">
+                Ім'я клієнта
+                <input type="text" placeholder="Ім'я" class="form-controll" id="client_name" name="client_name" value=<%=Client[0].client_name %>>
+            </label>
+
+            <label class="form-label">
+                Номер телефону
+                <input type="number" placeholder="Телефон" class="form-controll" id="client_phone" name="client_phone" value=<%=Client[0].client_phone %>>
+            </label>
+
+            <label class="form-label">
+                Вік
+                <input type="number" placeholder="Вік" class="form-controll" id="client_age" name="client_age" min="16" value=<%=Client[0].client_age %>>
+            </label>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary" formaction="/api/department/put/<%= Client[0].id_client%>">Редагувати</button>
+    </form>
+
+
+
+
+    <!-- Підключення Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

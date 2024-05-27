@@ -1,0 +1,52 @@
+/* main.css */
+
+/* Стилі для body */
+.body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+/* Стилі для заголовка h1 */
+h1 {
+    text-align: center;
+    color: #007bff;
+}
+
+/* Стилі для таблиці */
+.table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Стилі для заголовків таблиці */
+.table th {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+/* Стилі для рядків таблиці */
+.table tr {
+    background-color: #ffffff;
+}
+
+/* Стилі для посилань */
+.btn {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+/* Стилі для посилань при наведенні */
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Стилі для редагування рядка таблиці */
+.edit-link {
+    background-color: azure;
+}

@@ -1,0 +1,88 @@
+<!-- views/clients.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гіди</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="body">
+    <h1 class="text-center">Список гідів</h1>
+    <div class="table-responsive">
+        <table class="table table-primary table-hover table-sm">
+            <tr>
+                <th>ID</th>
+                <th>Ім'я</th>
+                <th>Освіта</th>
+                <th>Досвід</th>
+                <th>Телефон</th>
+            </tr>
+
+            <!-- Використання EJS для виводу даних про клієнтів -->
+            <% for (var i = 0; i < guide.length; i++) { %>
+                <tr>
+                    <td><%= guide[i].id_guide %></td>
+                    <td><%= guide[i].guid_name %></td>
+                    <td><%= guide[i].guid_education %></td>
+                    <td><%= guide[i].guid_experience %></td>
+                    <td><%= guide[i].guide_phone %></td>
+
+                    <td style="background-color: azure;">
+                        <a class="btn btn-danger" href="/api/guide/delete/<%= guide[i].id_guide %>">Видалити</a>
+                    </td>
+
+                    <td style="background-color: azure;">
+                        <a class="btn btn-info" href="/api/guide/<%= guide[i].id_guide %>">Редагувати</a>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
+
+    <h2 class="text-center">Додати гіда</h2>
+
+    <form action="guide" method="POST" class="text-center">
+        <div class="nb-3">
+            <label class="form-label">
+                ID гіда
+                <input type="number" placeholder="id" class="form-controll" id="id_guide" name="id_guide" min="1">
+            </label>
+
+            <label class="form-label">
+                Ім'я гіда
+                <input type="text" placeholder="Ім'я гіда" class="form-controll" id="guid_name" name="guid_name">
+            </label>
+
+            
+            <label class="form-label">
+                Освіта
+                <input type="text" placeholder="Освіта гіда" class="form-controll" id="guid_education" name="guid_education">
+            </label>
+
+            <label class="form-label">
+                Досвід роботи
+                <input type="number" placeholder="Досвід" class="form-controll" id="guid_experience" name="guid_experience" >
+            </label>
+            
+            <label class="form-label">
+                Номер телефону
+                <input type="number" placeholder="Телефон гіда" class="form-controll" id="guide_phone" name="guide_phone">
+            </label>
+
+           
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Додати</button>
+
+    </form>
+
+    <a class="btn btn-outline-secondary" href="/" style="margin-left: 50px;">На головну</a>
+    <!-- Підключення Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
